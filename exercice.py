@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 
+from numpy import sort
+
+
 def order(values: list = None) -> list:
     if values is None:
         # TODO: demander les valeurs ici
@@ -30,8 +33,17 @@ def best_grades(student_grades: dict) -> dict:
 def frequence(sentence: str) -> dict:
     # TODO: Afficher les lettres les plus fréquentes
     #       Retourner le tableau de lettres
+    histogramme = {}
+    for lettre in sentence:
+        histogramme[lettre] = ma_phrase.count(lettre)
+    sorted_histogramme = sort(histogramme)
+    return {histogramme}
 
-    return {}
+# histrogramme = {lettre: 0 for lettre in ma_phrase}
+# for lettre in ma_phrase:
+#   histogramme[lettre] += 1
+# print(histogramme)
+
 
 
 def get_recipes():
